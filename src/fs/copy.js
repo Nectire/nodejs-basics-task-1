@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
@@ -9,7 +9,7 @@ export const copy = async () => {
     const pathToFolderCopy = join(__dirname, "files_copy/");
     try {
         if(!fs.existsSync(pathToFolder) || fs.existsSync(pathToFolderCopy))
-            throw Error("FS operation failed");
+            throw new Error("FS operation failed");
 
         await fs.promises.mkdir(pathToFolderCopy, { recursive: true });
         console.log("Directory was created");

@@ -12,7 +12,7 @@ export const create = async () => {
 
     const content = "I am fresh and young";
     fs.writeFile(filePath, content, (err) => {
-        if (err) throw Error(err);
+        if (err) throw new Error(err);
         console.log("File was successfully written");
     });
   } catch (error) {
